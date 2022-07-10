@@ -4,6 +4,11 @@ const PORT = process.env.PORT || 8000
 
 const app = express()
 
+//Express body-parser middleware
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
+
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcom to the support desk api'})
 })
